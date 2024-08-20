@@ -53,3 +53,9 @@ Run the script to execute the following tasks:
    Logs the LINK amount received from the swap.
 5. Approve LINK Token for Aave: Approves the LINK token to be used by the Aave lending pool.
 6. Supply LINK to Aave: Supplies the swapped LINK tokens to the Aave lending pool to start earning interest.
+
+The script is configured to swap 1 USDC for LINK and supply the received LINK tokens to Aave. Adjust the main() function call to change the amount of USDC to swap.
+
+### Example Output
+
+[![Example Output](https://github.com/ajayfaul/write_a_defi_script_bounty/blob/main/output.png)]
