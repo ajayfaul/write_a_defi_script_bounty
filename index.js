@@ -16,24 +16,26 @@ const SWAP_ROUTER_CONTRACT_ADDRESS =
   "0x3bFA4769FB09eefC5a80d6E87c3B9C650f7Ae48E";
 
 // Aave Lending Pool Contract Address
-const LENDING_POOL_CONTRACT_ADDRESS =
-  "0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A";
+const LENDING_POOL_ADDRESS = "0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951";
 
 const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
+
 const factoryContract = new ethers.Contract(
   POOL_FACTORY_CONTRACT_ADDRESS,
   FACTORY_ABI,
   provider
 );
 
+// Wallet
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
-// Add Aave Lending Pool Contract
+// Aave Lending Pool Contract
 const lendingPool = new ethers.Contract(
-  LENDING_POOL_CONTRACT_ADDRESS,
+  LENDING_POOL_ADDRESS,
   LENDING_POOL_ABI,
   signer
 );
+
 
 // Part 1 - Set Token Configuration
 const USDC = {
@@ -82,7 +84,7 @@ async function approveToken(tokenAddress, tokenABI, amount, wallet) {
     );
   } catch (error) {
     console.error("An error occurred during token approval:", error);
-    throw new Error("Token approval failed !");
+    throw new Error("Token approval failed");
   }
 }
 
