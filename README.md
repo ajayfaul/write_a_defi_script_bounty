@@ -72,53 +72,53 @@ Key Functions of index.js
    Populates and sends an approval transaction.
    Waits for and logs the transaction confirmation.
 2. `getPoolInfo(factoryContract, tokenIn, tokenOut)`
+   **Purpose**: Retrieves information about the Uniswap pool for a given trading pair.
+   **Key Actions:**
+   Fetches the pool address from the factory contract.
+   Creates a contract instance for the pool.
+   Retrieves and returns details like token addresses and fee.
 
-Purpose: Retrieves information about the Uniswap pool for a given trading pair.
-Key Actions:
-Fetches the pool address from the factory contract.
-Creates a contract instance for the pool.
-Retrieves and returns details like token addresses and fee.
-prepareSwapParams(poolContract, signer, amountIn)
+3. `prepareSwapParams(poolContract, signer, amountIn)`
+   **Purpose:** Prepares the parameters required for a token swap on Uniswap.
+   **Key Actions:**
+   Gets the pool fee.
+   Sets up parameters including token addresses, amount to swap, and minimum output amount.
+4. `getTokenBalance(tokenAddress, wallet)`
+   **Purpose:** Retrieves the balance of a specified token for a given wallet.
+   **Key Actions:**
+   Creates a contract instance for the token.
+   Fetches and formats the token balance.
 
-Purpose: Prepares the parameters required for a token swap on Uniswap.
-Key Actions:
-Gets the pool fee.
-Sets up parameters including token addresses, amount to swap, and minimum output amount.
-getTokenBalance(tokenAddress, wallet)
+5. `executeSwap(swapRouter, params, signer)`
+   **Purpose:** Executes a token swap transaction on Uniswap.
+   **Key Actions:**
+   Logs the balance of the output token before the swap.
+   Sends a swap transaction.
+   Waits for and logs the transaction confirmation.
+   Logs the balance of the output token after the swap and calculates the swapped amount.
 
-Purpose: Retrieves the balance of a specified token for a given wallet.
-Key Actions:
-Creates a contract instance for the token.
-Fetches and formats the token balance.
-executeSwap(swapRouter, params, signer)
+6. `approveLendingPool(tokenAddress, amount, wallet)`
+   **Purpose:** Approves a specified amount of LINK to be used by the Aave lending pool.
+   **Key Actions:**
+   Creates a contract instance for the token.
+   Populates and sends an approval transaction.
+   Waits for and logs the transaction confirmation.
 
-Purpose: Executes a token swap transaction on Uniswap.
-Key Actions:
-Logs the balance of the output token before the swap.
-Sends a swap transaction.
-Waits for and logs the transaction confirmation.
-Logs the balance of the output token after the swap and calculates the swapped amount.
-approveLendingPool(tokenAddress, amount, wallet)
+7. `supplyToAave(lendingPool, amount, tokenAddress, wallet)`
+   **Purpose:** Supplies LINK tokens to the Aave lending pool.
+   **Key Actions:**
+   Sends a supply transaction to Aave.
+   Waits for and logs the transaction confirmation.
 
-Purpose: Approves a specified amount of LINK to be used by the Aave lending pool.
-Key Actions:
-Creates a contract instance for the token.
-Populates and sends an approval transaction.
-Waits for and logs the transaction confirmation.
-supplyToAave(lendingPool, amount, tokenAddress, wallet)
+8. `main(swapAmount)`
+   **Purpose:** Coordinates the overall process of swapping USDC for LINK and supplying LINK to Aave.
+   **Key Actions:**
+   Approves USDC for the swap router.
+   Retrieves pool information and prepares swap parameters.
+   Executes the swap and calculates the received LINK amount.
+   Approves LINK for Aave and supplies it to the lending pool.
 
-Purpose: Supplies LINK tokens to the Aave lending pool.
-Key Actions:
-Sends a supply transaction to Aave.
-Waits for and logs the transaction confirmation.
-main(swapAmount)
-
-Purpose: Coordinates the overall process of swapping USDC for LINK and supplying LINK to Aave.
-Key Actions:
-Approves USDC for the swap router.
-Retrieves pool information and prepares swap parameters.
-Executes the swap and calculates the received LINK amount.
-Approves LINK for Aave and supplies it to the lending pool.
+This index.js script provides a comprehensive solution for interacting with DeFi protocols on the Sepolia testnet. By automating the processes of token approval, swapping USDC for LINK, and supplying LINK to the Aave lending pool, the script streamlines complex DeFi transactions and showcases the power of Ethereum smart contracts. With functions that handle each step of the process, from setting up contract interactions to managing token balances and transactions, this script is a practical tool for engaging with decentralized finance. By running this script, users can efficiently execute swaps and manage liquidity, demonstrating the potential of automated DeFi operations in real-world scenarios
 
 ### Example Output
 
