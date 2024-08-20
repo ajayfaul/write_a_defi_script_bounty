@@ -163,7 +163,7 @@ async function approveLendingPool(tokenAddress, amount, wallet) {
   const approveAmount = ethers.parseUnits(amount.toString(), LINK.decimals);
   console.log(`Approving Lending Pool for ${approveAmount} LINK...`);
   const approveTransaction = await tokenContract.approve.populateTransaction(
-    LENDING_POOL_CONTRACT_ADDRESS,
+    LENDING_POOL_ADDRESS,
     approveAmount
   );
 
