@@ -58,4 +58,4 @@ The script is configured to swap 1 USDC for LINK and supply the received LINK to
 
 ### Example Output
 
-[![Example Output](https://github.com/ajayfaul/write_a_defi_script_bounty/blob/main/output.png)]
+![Example Output](https://github.com/ajayfaul/write_a_defi_script_bounty/blob/main/output.png)
