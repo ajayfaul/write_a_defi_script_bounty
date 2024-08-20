@@ -1,4 +1,4 @@
-# Bounty Write a Defi Script
+# Bounty Write a DeFi Script
 
 This script interacts with Uniswap and Aave to perform token swaps and supply liquidity on the Sepolia testnet. It leverages Ethereum smart contracts and the ethers.js library to automate the process of swapping USDC for LINK and subsequently supplying LINK to the Aave lending pool.
 
