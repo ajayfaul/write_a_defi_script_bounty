@@ -5,7 +5,7 @@ import POOL_ABI from "./abis/pool.json" assert { type: "json" };
 import TOKEN_IN_ABI from "./abis/token.json" assert { type: "json" };
 
 // Add ABI of Aave Lending Pool
-import LENDING_POOL_ABI from "./abis/aave_lending_provider.json" assert { type: "json" };
+import LENDING_POOL_ABI from "./abis/lendingpool.json" assert { type: "json" };
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -26,7 +26,6 @@ const factoryContract = new ethers.Contract(
   provider
 );
 
-// Wallet
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
 // Aave Lending Pool Contract
@@ -84,7 +83,7 @@ async function approveToken(tokenAddress, tokenABI, amount, wallet) {
     );
   } catch (error) {
     console.error("An error occurred during token approval:", error);
-    throw new Error("Token approval failed");
+    throw new Error("Token approval failed !");
   }
 }
 
@@ -187,7 +186,7 @@ async function supplyToAave(lendingPool, amount, tokenAddress, wallet) {
     }
   );
   await tx.wait();
-  console.log(`Supply to Aave successful https://sepolia.etherscan.io/tx/${tx.hash}`);
+  console.log(`Supply successful https://sepolia.etherscan.io/tx/${tx.hash}`);
 }
 
 //Main Function
