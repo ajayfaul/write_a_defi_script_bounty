@@ -5,7 +5,7 @@ import POOL_ABI from "./abis/pool.json" assert { type: "json" };
 import TOKEN_IN_ABI from "./abis/token.json" assert { type: "json" };
 
 // Add ABI of Aave Lending Pool
-import LENDING_POOL_ABI from "./abis/aave.json" assert { type: "json" };
+import LENDING_POOL_ABI from "./abis/aave_lending_provider.json" assert { type: "json" };
 
 import dotenv from "dotenv";
 dotenv.config();
