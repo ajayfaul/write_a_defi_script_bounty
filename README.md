@@ -2,6 +2,11 @@
 
 This script interacts with Uniswap and Aave to perform token swaps and supply liquidity on the Sepolia testnet. It leverages Ethereum smart contracts and the ethers.js library to automate the process of swapping USDC for LINK and subsequently supplying LINK to the Aave lending pool.
 
+## Illustration
+
+Here are the illustrations of the script in action:
+![Illustration](https://github.com/ajayfaul/write_a_defi_script_bounty/blob/main/diagram.png)
+
 ## Environment Prerequisites
 
 - Git: Ensure Git is installed on your system for cloning the repository.
